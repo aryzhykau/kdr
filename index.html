@@ -15,11 +15,11 @@
 .certificate-opening .certificate-rays{animation:certificate-rays 1.25s ease-in-out infinite alternate}
 @keyframes certificate-rays{0%{opacity:0;transform:translate(-50%,-50%) scale(.45) rotate(-18deg)}25%{opacity:.55}100%{opacity:.18;transform:translate(-50%,-50%) scale(1) rotate(12deg)}}
 .certificate-reveal{position:absolute;z-index:2;bottom:90px;left:50%;width:min(calc(100% - 8px),480px);padding:14px 16px 13px;border:1px solid #e7d3bb;border-radius:14px;background:linear-gradient(145deg,#fffef9,#fff8ee);box-shadow:0 14px 34px #75504425;transform-origin:50% 100%;transform:translate(-50%,0) scale(.6);pointer-events:none}
-.certificate-peeked .certificate-reveal{transform:translate(-50%,-60px) scale(.6);transition:transform .65s cubic-bezier(.2,.72,.2,1)}
+.certificate-peeked .certificate-reveal{transform:translate(-50%,-85px) scale(.6);transition:transform .65s cubic-bezier(.2,.72,.2,1)}
 .certificate-lifting .certificate-reveal{animation:certificate-lift 1.1s cubic-bezier(.18,.73,.22,1) both}
 .certificate-cleared .certificate-reveal{z-index:10}
 .certificate-presented .certificate-reveal{z-index:10;pointer-events:auto;box-shadow:0 22px 55px #75504436,0 0 38px #f8e0a88c;animation:certificate-present 1s cubic-bezier(.18,.8,.2,1) both}
-@keyframes certificate-lift{from{transform:translate(-50%,-60px) scale(.6)}to{transform:translate(-50%,-200px) scale(.6)}}
+@keyframes certificate-lift{from{transform:translate(-50%,-85px) scale(.6)}to{transform:translate(-50%,-200px) scale(.6)}}
 @keyframes certificate-present{0%{transform:translate(-50%,-200px) scale(.6)}70%{transform:translate(-50%,-98px) scale(1.03)}88%{transform:translate(-50%,-108px) scale(.99)}100%{transform:translate(-50%,-105px) scale(1)}}
 .certificate-kicker{font:600 10px var(--sans);letter-spacing:.18em;color:#a77e7b;text-align:center;padding-bottom:10px;border-bottom:1px solid #eadbd0}
 .certificate-content{display:grid;grid-template-columns:135px 1fr;align-items:center;gap:16px;padding:13px 0}
@@ -35,7 +35,7 @@
 .envelope-back,.envelope-front,.envelope-flap{position:absolute;left:0;right:0;margin:auto;bottom:84px;width:min(320px,82vw);height:170px;pointer-events:none}
 .envelope-back{z-index:1;border:1px solid #c78188;border-radius:13px;background:linear-gradient(145deg,#e9b5a8,#cc838e);box-shadow:0 20px 35px #8c576033}
 .envelope-front{z-index:3;border-radius:0 0 12px 12px;background:linear-gradient(155deg,#eab7aa,#d69096 63%,#c27985);clip-path:polygon(0 0,50% 32%,100% 0,100% 100%,0 100%)}
-.envelope-flap{z-index:4;background:linear-gradient(150deg,#f2d0be,#d99b9b);clip-path:polygon(0 0,100% 0,50% 69%);transform-origin:50% 0;transition:transform .7s cubic-bezier(.2,.7,.2,1)}
+.envelope-flap{z-index:4;background:linear-gradient(150deg,#f2d0be,#d99b9b);clip-path:polygon(0 0,100% 0,50% 69%);transform-origin:50% 0;backface-visibility:hidden;-webkit-backface-visibility:hidden;transition:transform .7s cubic-bezier(.2,.7,.2,1)}
 .envelope-seal{position:absolute;z-index:5;left:calc(50% - 20px);bottom:117px;display:grid;place-items:center;width:40px;height:40px;border:2px solid #f9e9ca;border-radius:50%;background:radial-gradient(circle at 35% 30%,#e2c17f,#bb8a56);color:#fffaf0;font:17px var(--serif);box-shadow:0 3px 8px #69434a36;transition:opacity .25s,transform .4s;pointer-events:none}
 .envelope-hitbox{position:absolute;z-index:6;left:0;right:0;margin:auto;bottom:84px;width:min(320px,82vw);height:170px;border:0;border-radius:13px;background:transparent;cursor:pointer}
 .envelope-hitbox:focus-visible{outline:2px solid #bd8589;outline-offset:4px}
@@ -46,7 +46,7 @@
 .certificate-opening .envelope-hitbox{pointer-events:none}
 .certificate-opening .envelope-trigger{opacity:0;pointer-events:none;transform:translateX(-50%) translateY(8px)}
 .certificate-opening .envelope-flap{transform:perspective(700px) rotateX(180deg)}
-.certificate-flap-back .envelope-flap{z-index:1}
+.certificate-flap-back .envelope-flap{z-index:1;visibility:hidden}
 .certificate-opening .envelope-seal{opacity:0;transform:scale(.65)}
 .certificate-cleared .envelope-back,.certificate-cleared .envelope-front,.certificate-cleared .envelope-seal{transform:translateX(115px) scale(.88);opacity:0;transition:transform .75s cubic-bezier(.22,.7,.2,1),opacity .75s ease}
 .certificate-cleared .envelope-flap{transform:translateX(115px) perspective(700px) rotateX(180deg) scale(.88);opacity:0;transition:transform .75s cubic-bezier(.22,.7,.2,1),opacity .75s ease}
